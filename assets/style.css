@@ -1,0 +1,61 @@
+* {
+    font-family: 'Cedarville Cursive', cursive;
+    list-style-type: none;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-size: 25px;
+    background-color: pink;
+    margin: 0px;
+}
+
+p {
+    font-size: 20px;
+    padding: 20px 0px;
+}
+
+img {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+#intro {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#start-game {
+    width: 15%;
+    background-color: green;
+    color: white;
+    border-radius: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+li {
+    padding-right: 40px;
+    padding: 10px 0px;
+    border-radius: 25px;
+    background-color: lightgrey;
+    margin: 20px;
+    width: 150px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+

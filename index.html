@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Assets/reset.css" />
+    <link rel="stylesheet" href="./Assets/style.css" />
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav>
+                <p>Welcome To Our Soccer Quiz Game</p>
+        </nav>
+    </header>
+    <main>
+        <section id="timer" class="hide">15</section>
+        <section id="intro" class="show">
+            <h1>Barclays Premier League Soccer Quiz</h1>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFsJqvAv373dDxYLnVsLgfkAV97WfV9f0fmj5WwchoRw&s">
+            <button id="start-game">Start Game</button>
+        </section>
+        <section id="questions" class="hide">
+            <h2 id="question"></h2>
+            <ul id="choices"></ul>
+        </section>
+        <section id="result"></section>
+
+        <div id="gameover" class="hide">
+
+            <div id="finalScore"></div>
+            <input type="text" size = "40" placeholder="Enter you initials for high score" name="intials" id="initials"/>
+            <button id="submitScore">Submit Score</button>
+        </div>
+        <div id=highscoreContainer class="hide">
+            <div id="high-scorePage">
+                <div id="highscore-header">
+                    <h3>User Initials</h3>
+                    <h3>Score</h3>
+                </div>
+                    <div id = "highscore-initials"></div>
+                    <div id = "highscore-score"></div>
+            </div>
+                <div id="endGameBtns">
+                    <button id="playAgain" onclick="replayQuiz()">Play Again</button>
+                    <button id="clearHighscore" onclick="clearScore()">Clear Highscores</button>
+                </div>
+        </div>
+    </main>
+
+    <script src="./assets/script.js"></script>
+</body>
+</html>
