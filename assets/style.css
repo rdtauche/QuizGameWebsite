@@ -71,14 +71,21 @@ li {
 }
 
 
-#initials {
-    margin-top: 20px;
+h3 {
+    flex-direction: row;
 }
 
 .flex {
     display: flex;
     justify-content: center;
     flex-direction: column;
+    padding-left: 0px;
+}
+
+.flexrow {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
     padding-left: 0px;
 }
 

@@ -16,7 +16,7 @@ var submitScoreBtn = document.getElementById("submitScore");
 var highscoreDisplayScore = document.getElementById("highscore-score");
 var finalScoreEl = document.getElementById("finalScore");
 var gameoverDiv = document.getElementById("gameover");
-var startQuizDiv = document.getElementById("startagain");
+var startGameSection = document.getElementById("intro");
 
 var score = 0;
 var timer = 60;
@@ -38,7 +38,7 @@ var question = [
   },
   {
     question: "Which is the only team to ever go undefeated in a season?",
-    choices:  ["Liverpool", "Man United", "Man City", "Arsenal"],
+    choices: ["Liverpool", "Man United", "Man City", "Arsenal"],
     answer: "Arsenal",
   },
   {
@@ -105,47 +105,53 @@ function showScore() {
 }
 // On click of the submit button, we run the function highscore that saves and stringifies the array of high scores already saved in local stoage
 // as well as pushing the new user name and score into the array we are saving in local storage. Then it runs the function to show high scores.
-submitScoreBtn.addEventListener("click", function highscore(){
-    
-    
-  if(highscoreInputName.value === "") {
-      alert("Initials cannot be blank");
-      return false;
-  }else{
-      var savedHighscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
-      var currentUser = highscoreInputName.value.trim();
-      var currentHighscore = {
-          name : currentUser,
-          score : score
-      };
-  
-     
-      savedHighscores.push(currentHighscore);
-      localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
-      generateHighscores();
+submitScoreBtn.addEventListener("click", (event) => {
+event.preventDefault()
+console.log(event);
+
+  if (highscoreInputName.value === "") {
+    alert("Initials cannot be blank");
+    return false;
+  } else {
+    var savedHighscores = JSON.parse(localStorage.getItem("highscores")) || [];
+    var currentUser = highscoreInputName.value.trim();
+    var currentHighscore = {
+      name: currentUser,
+      score: score
+    };
+console.log(savedHighscores);
+// console.log(currentUser);
+// console.log(currentHighscore);
+    // if (savedHighscores.length > 0) {
+    //   savedHighscores.push(currentHighscore)
+
+    // }
+    savedHighscores.push(currentHighscore);
+    localStorage.setItem("highscores", JSON.stringify(savedHighscores));
+    generateHighscores();
 
   }
-  
+
 });
 
 // This function clears the list for the high scores and generates a new high score list from local storage
-function generateHighscores(){
+function generateHighscores() {
   highscoreDisplayName.innerHTML = "";
   highscoreDisplayScore.innerHTML = "";
-  var highscores = JSON.parse(localStorage.getItem("savedHighscores")) || [];
-  for (i=0; i<highscores.length; i++){
-      var newNameSpan = document.createElement("li");
-      var newScoreSpan = document.createElement("li");
-      newNameSpan.textContent = highscores[i].name;
-      newScoreSpan.textContent = highscores[i].score;
-      highscoreDisplayName.appendChild(newNameSpan);
-      highscoreDisplayScore.appendChild(newScoreSpan);
+  var highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+  for (i = 0; i < highscores.length; i++) {
+    var newNameSpan = document.createElement("li");
+    var newScoreSpan = document.createElement("li");
+    newNameSpan.textContent = highscores[i].name;
+    newScoreSpan.textContent = highscores[i].score;
+    highscoreDisplayName.appendChild(newNameSpan);
+    highscoreDisplayScore.appendChild(newScoreSpan);
   }
 }
 
 
 // This function displays the high scores page while hiding all of the other pages from 
-function showHighscore(){
+function showHighscore() {
   startQuizDiv.style.display = "none"
   gameoverDiv.style.display = "none";
   highscoreContainer.style.display = "flex";
@@ -156,17 +162,20 @@ function showHighscore(){
 }
 
 // This function clears the local storage of the high scores as well as clearing the text from the high score board
-function clearScore(){
+function clearScore() {
   window.localStorage.clear();
   highscoreDisplayName.textContent = "";
   highscoreDisplayScore.textContent = "";
 }
 
 // This function sets all the variables back to their original values and shows the home page to enable replay of the quiz
-function replayQuiz(){
+function replayQuiz() {
   highscoreContainer.style.display = "none";
   gameoverDiv.style.display = "none";
   startGameSection.style.display = "flex";
+  console.log(startGameSection);
+  console.log(highscoreContainer);
+  console.log(gameoverDiv);
   timeLeft = 60;
   score = 0;
   currentQuestionIndex = 0;
@@ -178,6 +187,7 @@ choicesEl.addEventListener("click", function (event) {
 
   if (target.matches("li")) {
     if (target.textContent === question[questionIndex].answer) {
+      score++;
       resultEl.textContent = "You are correct!";
     } else {
       resultEl.textContent = "Sorry, that is incorrect!";
