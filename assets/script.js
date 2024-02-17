@@ -19,7 +19,7 @@ var gameoverDiv = document.getElementById("gameover");
 var startQuizDiv = document.getElementById("startagain");
 
 var score = 0;
-var timer = 150;
+var timer = 60;
 // var timeInterval = 60;
 var timeLeft = 60;
 
@@ -119,11 +119,7 @@ submitScoreBtn.addEventListener("click", function highscore(){
           score : score
       };
   
-      gameoverDiv.style.display = "none";
-      highscoreContainer.style.display = "flex";
-      highscoreDiv.style.display = "block";
-      endGameBtns.style.display = "flex";
-      
+     
       savedHighscores.push(currentHighscore);
       localStorage.setItem("savedHighscores", JSON.stringify(savedHighscores));
       generateHighscores();
@@ -170,7 +166,7 @@ function clearScore(){
 function replayQuiz(){
   highscoreContainer.style.display = "none";
   gameoverDiv.style.display = "none";
-  startQuizDiv.style.display = "flex";
+  startGameSection.style.display = "flex";
   timeLeft = 60;
   score = 0;
   currentQuestionIndex = 0;
@@ -182,9 +178,9 @@ choicesEl.addEventListener("click", function (event) {
 
   if (target.matches("li")) {
     if (target.textContent === question[questionIndex].answer) {
-      resultEl.textContent = "correct";
+      resultEl.textContent = "You are correct!";
     } else {
-      resultEl.textContent = "incorrect";
+      resultEl.textContent = "Sorry, that is incorrect!";
       timer = timer - 5;
     }
 

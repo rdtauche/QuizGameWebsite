@@ -1,6 +1,9 @@
 * {
     font-family: 'Cedarville Cursive', cursive;
     list-style-type: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 header {
@@ -23,17 +26,16 @@ img {
     padding-bottom: 20px;
 }
 
-#intro {
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
+li {
+    display: flex;
 }
 
-#start-game {
-    width: 15%;
+button {
+    width: 150px;
     background-color: green;
     color: white;
     border-radius: 20px;
+    margin: 20px;
 }
 
 nav ul {
@@ -51,11 +53,44 @@ li {
     width: 150px;
 }
 
+#intro {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+#timer {
+    font-size: 20px;
+}
+
+
+#result {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#initials {
+    margin-top: 20px;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 0px;
+}
+
 .hide {
     display: none;
 }
 
 .show {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
+
 
