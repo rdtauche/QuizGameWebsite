@@ -20,7 +20,6 @@ var startGameSection = document.getElementById("intro");
 
 var score = 0;
 var timer = 60;
-// var timeInterval = 60;
 var timeLeft = 60;
 
 
@@ -99,7 +98,7 @@ function showScore() {
   highscoreContainer.setAttribute("class", "show");
   highscoreDiv.setAttribute("class", "show");
   gameoverDiv.setAttribute("class", "show");
-  clearInterval(timeInterval);
+  clearInterval();
   highscoreInputName.value = "";
   finalScoreEl.innerHTML = "You got " + score + " out of " + question.length + " correct!";
 }
@@ -173,12 +172,13 @@ function replayQuiz() {
   highscoreContainer.style.display = "none";
   gameoverDiv.style.display = "none";
   startGameSection.style.display = "flex";
-  console.log(startGameSection);
-  console.log(highscoreContainer);
-  console.log(gameoverDiv);
+  // console.log(startGameSection);
+  // console.log(highscoreContainer);
+  // console.log(gameoverDiv);
   timeLeft = 60;
   score = 0;
   currentQuestionIndex = 0;
+  timer = 60;
 }
 
 // ***This checks if the answer selected is correct or incorrect
