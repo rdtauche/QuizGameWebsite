@@ -26,7 +26,7 @@ THEN I can save my initials and score
     3. Once complete, go to pages and deploy the website live
 
 ## My Results
-    1. My Github Repo:  https://github.com/rdtauche/challenge3
+    1. My Github Repo:  https://github.com/rdtauche/challenge4
     2. My Pages Deploy: https://rdtauche.github.io/challenge3/
     3. Screenshot of my live pages site:
 ![image](https://github.com/rdtauche/challenge3/assets/57552771/871ab457-d0fa-460d-9e29-94be2c42d302)
