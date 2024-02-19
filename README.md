@@ -27,9 +27,9 @@ THEN I can save my initials and score
 
 ## My Results
     1. My Github Repo:  https://github.com/rdtauche/challenge4
-    2. My Pages Deploy: https://rdtauche.github.io/challenge3/
+    2. My Pages Deploy: https://rdtauche.github.io/challenge4/
     3. Screenshot of my live pages site:
-![image](https://github.com/rdtauche/challenge3/assets/57552771/871ab457-d0fa-460d-9e29-94be2c42d302)
+![image](https://github.com/rdtauche/challenge4/assets/57552771/9db71e63-93fd-49e2-b5a6-93afa0085656)
 
 
 ## Usage
@@ -37,6 +37,8 @@ THEN I can save my initials and score
 This Challenge requires us to create an application that an employee can use to generate a random password based on criteria they've selected. 
 
 ## Credits
+
+Teachers: our instructor, Kevin Ferguson, provided us with some starter code which i utilized and tried to make my own.  I also had a tutoring session with Brandon Leek, who helped me fix my final score and replay button.
 
 Google - I got stuck a few times but was able to search google to find similiar projects, and how they designed their script.js JavaScript code.  Some examples which helped guide me included:
 https://forum.codewithmosh.com/
